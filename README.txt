@@ -1,8 +1,5 @@
-To start the helper run app.py file.
+1. Install all the requirements from "requirements.txt"
+2. Run "app.py"
+3. Check the result on "localhost:8080/"
 
-Open "http://127.0.0.1:5000/" in your brouser
-
-Use "Switch to addressbook" button to navigate through the helper
-with users data. All the buttons should work.
-
-Please inform me in case of any troubles.
+FYI: you can see the links used for accuracy check in "links.txt"
