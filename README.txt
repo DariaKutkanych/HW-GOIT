@@ -1,5 +1,10 @@
-1. Install all the requirements from "requirements.txt"
-2. Run "app.py"
-3. Check the result on "localhost:8080/"
+1. Install Django
 
-FYI: you can see the links used for accuracy check in "links.txt"
+2. Run "python 'manage.py runserver'"
+
+3. Check the result on "localhost:8000/"
+
+To add a transaction type as an expense click on Expense checkbox othervise 
+it will be created as income.
+
+In "Generate a report" you may choose "all" in order to see all the transactions

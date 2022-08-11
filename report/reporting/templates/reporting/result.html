@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Organizer</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <nav
+        style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px"
+      >
+        <ul>
+          <li><a href="/" role="button">Main Menu</a></li>
+        </ul> 
+      </nav>
+      <div>
+      <a href="/" role="button">Report from {{ start }} to {{ end }}</a>
+      </div>
+      <a href="/" role="button">Expenses</a>
+      
+      {% for entry in expenses %}
+      <ul>
+        <li>
+          <a role="button" class="secondary"
+            > Transaction type: {{entry.transaction.name}} | Amount: {{entry.amount}} | Date: {{entry.created}}</a
+          >
+          <span {{ab.name}} class="outline">
+          <a href="/delete/{{entry.id}}" role="button" class="contrast"
+            >Delete entry</a
+        </li>
+      </ul>
+      {% endfor %}
+
+      <a href="/" role="button">Income</a>
+      {% for entry in income %}
+      <ul>
+        <li>
+          <a role="button" class="secondary"
+            > Transaction type: {{entry.transaction.name}} | Amount: {{entry.amount}} | Date: {{entry.created}}</a
+          >
+          <span {{ab.name}} class="outline">
+          <a href="/delete/{{entry.id}}" role="button" class="contrast"
+            >Delete entry</a
+        </li>
+      </ul>
+      {% endfor %}
+      <div style="padding: 30 px">
+        
+        <label
+          <a href="/" role="button">Total Balance: {{result}}</a>
+        </label>
+        
+      </div>
+      
+    </main>
+  </body>
+</html>

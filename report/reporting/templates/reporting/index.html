@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Organizer</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <nav
+        style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px"
+      >
+        <ul>
+          <li><a href="/expense/" role="button">Add expense</a></li>
+          <li><a href="/income/" role="button">Add income</a></li>
+          <li><a href="/transaction/" role="button">Create a new transaction</a></li>
+          <li><a href="/period/" role="button">Generate total report</a></li>
+        </ul>
+      </nav>
+
+      {% for note in notes %}
+      <ul>
+        <li>
+          {%if not note.done%}
+          <a href="/detail/{{note.id}}" role="button" class="outline"
+            >{{note.name}}</a
+          >
+          <a href="/done/{{note.id}}" role="button">Mark Done</a>
+          <a href="/delete/{{note.id}}" role="button" class="contrast"
+            >Delete note</a
+          >
+          {% else %}
+
+          <a href="/detail/{{note.id}}" role="button" class="secondary"
+            ><s>{{note.name}}</s></a
+          >
+          {% endif %}
+        </li>
+      </ul>
+      {% endfor %}
+    </main>
+  </body>
+</html>
